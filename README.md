@@ -27,7 +27,10 @@ If block runs red infront of any player then that respective players loses the g
 
 #### If player 1 wins 
 
-![Screenshot (86)](https://user-images.githubusercontent.com/47947329/59541015-746bf380-8eb4-11e9-93c5-3975ed622c75.png)
+
+![fba45028-a11b-497a-bb80-f5cac01fff59](https://user-images.githubusercontent.com/47947329/59541280-6bc7ed00-8eb5-11e9-829f-a775915007ea.png)
+
+
 
 #### If player 2 wins 
 
