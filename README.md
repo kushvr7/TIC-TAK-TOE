@@ -35,3 +35,9 @@ If block runs red infront of any player then that respective players loses the g
 #### If player 2 wins 
 
 ![Screenshot (89)](https://user-images.githubusercontent.com/47947329/59541011-72a23000-8eb4-11e9-847b-ede80a0cc2c6.png)
+
+#### If TIE condition attained
+
+![Screenshot (122)](https://user-images.githubusercontent.com/47947329/61721687-bee75800-ad1d-11e9-977c-c54b43bd90ed.png)
+
+
