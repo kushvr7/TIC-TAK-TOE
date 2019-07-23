@@ -16,7 +16,6 @@
 	}
 		tr,td{
 			border:2px solid black;
-
 		}
 		td{
 			width: 70px;
@@ -37,12 +36,11 @@
         left:430px;
         font-family: 'Faster One', cursive;
         font-size: 70px;
-
      }
 	</style>
 </head>
 <body>
-<table>
+<table id="table1">
 	<tr>
 		<td><input id="b1" type="button" onclick="c1()" name="" style="width: 70px;height: 70px;" value=" "><span id="s11" style="
 		display: none;text-align: center;font-size: 40px;color:rgb(178,34,34);"><input id="i1" style="display: none;"> X</span><span id="s12" style="
@@ -84,17 +82,26 @@
  	<span style="font-size: 25px;font-weight: bolder;font-family: 'Kaushan Script', cursive";>PLAYER</span>&nbsp;&nbsp;&nbsp;   <strong style="font-size: 30px;font-weight: bolder;font-family: 'Kaushan Script', cursive";">1</strong><span style="font-size: 25px;font-weight: bolder"> : &nbsp;<strong style="color:rgb(178,34,34);font-size: 50px;">X</strong>&nbsp;</span><br><br>
  	<span style="font-size: 25px;font-weight: bolder;font-family: 'Kaushan Script', cursive";>PLAYER</span>&nbsp;&nbsp;&nbsp;   <strong style="font-size: 30px;font-weight: bolder;font-family: 'Kaushan Script', cursive";">2</strong><span style="font-size: 25px;font-weight: bolder"> : &nbsp;<strong style="color:rgb(178,34,34);font-size: 50px;">O</strong>&nbsp;</span><br><br> 
  </p>
- <p id="tic">Tic Tac Toe</p>
+ <p id="tic">Tik Tac Toe</p>
+ <span id="win1">
  <p style="position: absolute;top:234px;left:945px;font-size: 30px;font-family: 'Kaushan Script', cursive;font-weight: bolder;">Ply 1 win :</p><div id="d1" style="position:absolute; top:270px; left:1100px;width:90px;height:30px;background-color: black;"></div>
  <p style="position: absolute;top:304px;left:945px;font-size: 30px;font-family: 'Kaushan Script', cursive;font-weight: bolder;">Ply 2 win :</p><div id="d2" style="position:absolute; top:340px; left:1100px;width:90px;height:30px;background-color: black;"></div>
-    <script>    	player = 1;
+</span>
+
+<p id="tie" style="display: none;position: absolute;top:300px;left:490px;font-family:'Kaushan Script', cursive;font-weight: bolder;font-size:35px;  "> It's &nbsp;&nbsp;&nbsp;       a  &nbsp;&nbsp;&nbsp;        TIE &nbsp;&nbsp;&nbsp;       mate  </p>
+
+    <script>   
+     player = 1;
+     flag = 0 ;
     	function c2()
     	{
+            flag = flag+1;
             if(player == "1"){
     		document.getElementById("b2").style.display = "none";
     	    document.getElementById("s21").style.display = "block";
     	    player = player + 1;
             i2 = "X";
+
             result();
             }
             else{
@@ -108,6 +115,7 @@
         
         function c1()
         {
+            flag = flag+1;
             if(player == 2)
             {
             document.getElementById("b1").style.display = "none";
@@ -127,6 +135,7 @@
         
         function c3()
         {
+            flag = flag+1;
         	if(player == 1)
             {
             document.getElementById("b3").style.display = "none";
@@ -146,6 +155,7 @@
         
             function c4()
         {
+            flag = flag+1;
         	if(player == 2)
             {
             document.getElementById("b4").style.display = "none";
@@ -162,10 +172,9 @@
             result();
             }
         }
-
         function c5()
         {
-         
+          flag = flag+1;
          if(player == 1)
             {
             document.getElementById("b5").style.display = "none";
@@ -181,13 +190,10 @@
             i5 = "Y";
             result();
     	    }
-
         }
-
-
         function c6()
         {
-         
+         flag = flag+1;
          if(player == 2)
             {
             document.getElementById("b6").style.display = "none";
@@ -203,13 +209,11 @@
             i6 = "X";
             result();
     	    }
-
         }
     	
-
         function c7()
         {
-         
+         flag = flag+1;
          if(player == 1)
             {
             document.getElementById("b7").style.display = "none";
@@ -225,12 +229,10 @@
             i7 = "Y";
             result();
     	    }
-
         }
-
         function c8()
         {
-         
+         flag = flag+1;
          if(player == 2)
             {
             document.getElementById("b8").style.display = "none";
@@ -238,7 +240,6 @@
     	    player = player - 1 ;
             i8 = "Y";
             result();
-
             }
             else{
             document.getElementById("b8").style.display = "none";
@@ -247,13 +248,11 @@
             i8 = "X";
             result();
     	    }
-
         }
     	
-
         function c9()
         {
-         
+         flag = flag+1;
          if(player == 1)
             {
             document.getElementById("b9").style.display = "none";
@@ -269,7 +268,6 @@
             i9 = "Y";
             result();
     	    }
-
         }
        
         function result()
@@ -281,17 +279,29 @@
             document.getElementById("d1").style.backgroundColor = "#2ad82a";
             document.getElementById("d2").style.backgroundColor = "#ff0404";
             i1=0,i2=0,i3=0,i4=0,i5=0,i6=0,i7=0,i8=0,i9=0;
+            flag=0;
           }
-
           if((i1 =="Y") && (i2 =="Y") && (i3 =="Y") || ((i3 =="Y") && (i6 =="Y") && (i9 =="Y")) || ((i7 =="Y") && (i8 =="Y") && (i9 =="Y")) || ((i2 =="Y") && (i5 =="Y") && (i8 =="Y")) || ((i4 =="Y") && (i5 =="Y") && (i6 =="Y")) || ((i3 =="Y") && (i5 =="Y") && (i7 =="Y")) || ((i1 =="Y") && (i5 =="Y") && (i9 =="Y")) || ((i1 =="Y") && (i4 =="Y") && (i7 =="Y")) )      
           
           {
            document.getElementById("d1").style.backgroundColor = "#ff0404";
            document.getElementById("d2").style.backgroundColor = "#2ad82a";
            i1=0,i2=0,i3=0,i4=0,i5=0,i6=0,i7=0,i8=0,i9=0;
+           flag=0;
           }
-    
-    }
+     
+         if(flag == 9)
+              {
+                  document.getElementById("table1").style.display = "none";
+                  document.getElementById("text1").style.display = "none";
+                  document.getElementById("win1").style.display = "none" ;
+                  document.getElementById("tie").style.display = "block";
+
+
+              }
+
+         }
+
     	
     	
     	
